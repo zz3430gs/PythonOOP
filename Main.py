@@ -23,7 +23,7 @@ def Main():
     def add_up_cards(self):
         totalAmount = 0
         for A_card in self.hand:
-            if faceNumber in Deck.Value:
+            if face_or_number in Deck.Value:
                 point_value = Deck.Value.get(A_card.face_or_number)
                 self.score += point_value
 
@@ -38,6 +38,7 @@ def Main():
         Print_Menu()
         user_choice = int(input("Please choose an Option.\n"))
         Player = Player(input('Please enter your name to play.\n'))
+        players_List.append(Player)
 
         deck = Deck()
         if user_choice == 1:
