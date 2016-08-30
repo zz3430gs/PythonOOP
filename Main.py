@@ -2,7 +2,6 @@ from Deck import *
 ##from Player import *
 def Main():
     print("Welcome to simple game of BlackJack!!")
-    play = True
     # Player.hand = []
     # Player.amount = int(0)
     players_List = []
@@ -21,19 +20,20 @@ def Main():
             counter += 1
         print('-----------------------------------')
 
-    # def add_up_cards(self):
-    #     totalAmount = 0
-    #     for A_card in self.hand:
-    #         if face_or_number in Deck.Value:
-    #             point_value = Deck.Value.get(A_card.face_or_number)
-    #             self.score += point_value
+    def add_up_cards(self):
+        totalAmount = 0
+        for A_card in self.hand:
+            if faceNumber in Deck.Value:
+                point_value = Deck.Value.get(A_card.face_or_number)
+                self.score += point_value
 
     def Print_Menu():
         print('(1): Play Game\n'
               '(2): Exit\n')
 
 
-    while play == True:
+
+    while True:
 
         Print_Menu()
         user_choice = int(input("Please choose an Option.\n"))
@@ -41,14 +41,13 @@ def Main():
 
         deck = Deck()
         if user_choice == 1:
-
             #Deals two cards to player
-            for i in range(3):
+            for i in range(2):
                 for Player in players_List:
                     Player.hand.append(deck.deal_card())
                     if Player.amount > 21 or Player.amount < 21:
                         print('You lost the game')
-            print(players_List[0].hand)
+                    display_hand()
 
 
 
